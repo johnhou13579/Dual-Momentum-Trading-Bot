@@ -1,0 +1,35 @@
+
+***********************************************************************************
+
+====================Fri September-11-2020 09:06 AM====================
+
+***********************************************************************************
+
+-------------TRADING SUMMARY-----------------
+Account NUMBER: 881192782
+Current EQUITY: 8001.9
+Current CASH BALANCE: 8000.2
+
+-------------DM SUMMARY-------------------{
+    "AAPL": 1.2659454286685907,
+    "AMD": 1.3300528694005962,
+    "AMZN": 1.2703562184594928,
+    "SPXL": 1.2078319020615087,
+    "TSLA": 1.9838234269106967
+}---------------------------------------------
+
+Max Value: TSLA score @ 1.9838234269106967
+
+-------------ACTIVITY REPORT-------------------
+Selling 3.0 shares of XXII
+DONE.....FILLED
+
+Buying 21 shares of TSLA at $371.75 each
+DONE.....FILLED
+
+
+-------------ENDING SUMMARY-----------------
+Current EQUITY: 8000.24
+Current CASH BALANCE: 4099.07
+
+End of trading for current hour...Fri September-11-2020 09:06 AM
