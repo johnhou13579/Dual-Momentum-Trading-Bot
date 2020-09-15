@@ -1,4 +1,4 @@
-# Dual-Momentum-Trading-Bot-Results
+# Long Term Momentum Trading on Tech Stocks
 
 ## What is this repository?
 A trading bot utilized on the TD Ameritrade platform written in python and utilizing [tda-api](https://tda-api.readthedocs.io/en/latest/index.html) API. Bot originally discovered, tweaked, and backtested on [Quantopian](https://www.quantopian.com/home). 
