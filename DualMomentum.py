@@ -100,7 +100,7 @@ def buyStock(maxValue, target_leverage):
     
     if len(instrument)==0 or (len(instrument)==1 and "MMDA1" in instrument): #If holding, positions substring will appear in json, otherwise, not holding positions
         temp_curr_price = c.get_quote(maxValue).json()[maxValue]["regularMarketLastPrice"]
-        curr_equity = curr_positions.json()[0]['securitiesAccount']['currentBalances']['availableFunds']
+        curr_equity = curr_positions.json()[0]['securitiesAccount']['currentBalances']['moneyMarketFund']
         number_of_shares = int(curr_equity/temp_curr_price*target_leverage)
         
         print("Buying " + str(number_of_shares)+" shares of "+maxValue + " at $"+str(temp_curr_price) + " each")
@@ -110,7 +110,7 @@ def buyStock(maxValue, target_leverage):
         
     elif ((len(instrument)==2) and ("MMDA1" in instrument) and (maxValue in instrument)) or ((len(instrument)==1) and maxValue in instrument): #If own existing stock to buy, buy more of same one
         temp_curr_price = c.get_quote(maxValue).json()[maxValue]["regularMarketLastPrice"]
-        curr_equity = curr_positions.json()[0]['securitiesAccount']['currentBalances']['availableFunds']
+        curr_equity = curr_positions.json()[0]['securitiesAccount']['currentBalances']['moneyMarketFund']
         number_of_shares = int(curr_equity/temp_curr_price*target_leverage)
         
         if "MMDA1" in instrument:
@@ -154,12 +154,12 @@ def buyStock(maxValue, target_leverage):
         placeSellOrder(old_stocks, old_quantity)
 
         temp_curr_price = c.get_quote(maxValue).json()[maxValue]["regularMarketLastPrice"]
-        curr_equity2 = curr_positions.json()[0]['securitiesAccount']['currentBalances']['availableFunds']
+        curr_equity2 = curr_positions.json()[0]['securitiesAccount']['currentBalances']['moneyMarketFund']
         number_of_shares = int(curr_equity2/temp_curr_price*target_leverage)
 
         while(number_of_shares<=0):
             curr_positions = c.get_accounts(fields=[c.Account.Fields.POSITIONS])
-            curr_equity2 = curr_positions.json()[0]['securitiesAccount']['currentBalances']['availableFunds']
+            curr_equity2 = curr_positions.json()[0]['securitiesAccount']['currentBalances']['moneyMarketFund']
             number_of_shares = int(curr_equity2/temp_curr_price*target_leverage)
             time.sleep(2)
 
@@ -243,21 +243,21 @@ def summary():
     print('\n-------------TRADING SUMMARY-----------------')
     print('Account NUMBER: ' + acct_id)
     print('Current EQUITY: ' + str(acct.json()[0]['securitiesAccount']['currentBalances']['equity']))
-    print('Current CASH BALANCE: ' + str(acct.json()[0]['securitiesAccount']['currentBalances']['availableFunds']) +'\n')
+    print('Current CASH BALANCE: ' + str(acct.json()[0]['securitiesAccount']['currentBalances']['moneyMarketFund']) +'\n')
     f.write('\n-------------TRADING SUMMARY-----------------')
     f.write('\nAccount NUMBER: ' + acct_id)
     f.write('\nCurrent EQUITY: ' + str(acct.json()[0]['securitiesAccount']['currentBalances']['equity']))
-    f.write('\nCurrent CASH BALANCE: ' + str(acct.json()[0]['securitiesAccount']['currentBalances']['availableFunds']) +'\n')
+    f.write('\nCurrent CASH BALANCE: ' + str(acct.json()[0]['securitiesAccount']['currentBalances']['moneyMarketFund']) +'\n')
 
 def endsummary():
     acct = c.get_accounts()
     acct_id = str(acct.json()[0]['securitiesAccount']['accountId'])
     print('\n\n-------------ENDING SUMMARY-----------------')
     print('Current EQUITY: ' + str(acct.json()[0]['securitiesAccount']['currentBalances']['equity']))
-    print('Current CASH BALANCE: ' + str(acct.json()[0]['securitiesAccount']['currentBalances']['availableFunds']) +'\n')
+    print('Current CASH BALANCE: ' + str(acct.json()[0]['securitiesAccount']['currentBalances']['moneyMarketFund']) +'\n')
     f.write('\n\n-------------ENDING SUMMARY-----------------')
     f.write('\nCurrent EQUITY: ' + str(acct.json()[0]['securitiesAccount']['currentBalances']['equity']))
-    f.write('\nCurrent CASH BALANCE: ' + str(acct.json()[0]['securitiesAccount']['currentBalances']['availableFunds']) +'\n')
+    f.write('\nCurrent CASH BALANCE: ' + str(acct.json()[0]['securitiesAccount']['currentBalances']['moneyMarketFund']) +'\n')
     print('\nEnd of trading for current hour...'+str(x.strftime("%a %B-%d-%Y %I:%M %p"))+'\n')
     f.write('\nEnd of trading for current hour...'+str(x.strftime("%a %B-%d-%Y %I:%M %p"))+'\n')
     
