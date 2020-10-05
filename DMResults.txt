@@ -33,3 +33,34 @@ Current EQUITY: 8000.24
 Current CASH BALANCE: 4099.07
 
 End of trading for current hour...Fri September-11-2020 09:06 AM
+
+
+***********************************************************************************
+
+====================Mon October-05-2020 12:17 PM====================
+
+***********************************************************************************
+
+-------------TRADING SUMMARY-----------------
+Account NUMBER: 881192782
+Current EQUITY: 9124.59
+Current CASH BALANCE: 195.18
+
+-------------DM SUMMARY-------------------{
+    "AAPL": 1.2157137933136688,
+    "AMD": 1.349270544710792,
+    "AMZN": 1.1181643239229293,
+    "SPXL": 1.2314935829556446,
+    "TSLA": 1.8962063425041493
+}---------------------------------------------
+
+Max Value: TSLA score @ 1.8962063425041493
+
+-------------ACTIVITY REPORT-------------------
+Holding same stock and cannot increase holdings.
+
+-------------ENDING SUMMARY-----------------
+Current EQUITY: 9124.59
+Current CASH BALANCE: 195.18
+
+End of trading for current hour...Mon October-05-2020 12:17 PM
